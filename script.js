@@ -42,17 +42,35 @@ export function aufgabe01(args) {
 
   // Hier geben wir das Resultat zurück, und machen einen Text daraus.
   return result.join("")
-
-  export function aufgabe02(args) {
-    const input = args
-    const result = []
-
-    for (let i = 0; i < input.length; i++) {
-      const currentElement = input[i]
-    }
-
-    return result.join("")
-  }
 }
 
-linkupExerciseHandler("[data-click=aufgabe01]", aufgabe01)
+export function aufgabe02(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const upperCase = currentElement.toUpperCase()
+    result.push(currentUpperCase)
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
+
+export function aufgabe03(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      // do nothing
+    } else if (currentElement === "E") {
+      //auch E ignorieren
+    }
+  }
+
+  return result.join("")
+}
