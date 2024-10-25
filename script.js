@@ -110,3 +110,22 @@ export function aufgabe08(args) {
 
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 // link und tab
+
+export function aufgabe09(args) {
+  const input = args
+  const result = []
+
+  const len = input.length
+  if (===6) {
+
+    return true
+
+  }
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
