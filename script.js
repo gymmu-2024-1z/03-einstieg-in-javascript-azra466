@@ -82,3 +82,31 @@ export function aufgabe03(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
+
+export function aufgabe08(args) {
+  //func und tab
+  const input = args
+  const result = [] // leeres resultat weil sonst hängt es immeer an den vorhandenen Wert an
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // Erkenne ob das aktuelle Zeichen ein e ist
+    if (currentElement === "e") {
+      // Das aktuelle Zeichen ist ein e
+      // Statt das e anzuhängen, hängen wir eine 3 an
+      result.push(3)
+    } else if (currentElement === "E") {
+      // Wir möchten auch grosse Es erkennen
+      result.push(3)
+    } else {
+      // In allen anderen Fällen, möchten wir das aktuelle Zeichen anhängen
+      result.push(currentElement)
+    }
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+// link und tab
