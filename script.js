@@ -44,13 +44,15 @@ export function aufgabe01(args) {
   return result.join("")
 }
 
+linkupExerciseHandler("[data-click=aufgabe01]", aufgabe01)
+
 export function aufgabe02(args) {
   const input = args
   const result = []
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    const upperCase = currentElement.toUpperCase()
+    const currentUpperCase = currentElement.toUpperCase()
     result.push(currentUpperCase)
   }
 
@@ -63,14 +65,20 @@ export function aufgabe03(args) {
   const input = args
   const result = []
 
+  let count = 0
+
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      // do nothing
+      // zähle das e
+      count = count + 1
     } else if (currentElement === "E") {
       //auch E ignorieren
+      count = count + 1
     }
   }
 
-  return result.join("")
+  return count
 }
+
+linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
