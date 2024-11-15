@@ -182,19 +182,67 @@ export function aufgabe12(args) {
 
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
-
-export function aufgabe12(args) {
-  const input = args
-  const result = []
-//ist Position = erstes "e"
-
-
-
-
-
-
-linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
-
 export function aufgabe13(args) {
   const input = args
   const result = []
+
+  let Position = -1
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //wenn du ein e findest
+    if (currentElement === "e" || currentElement === "E") {
+      //speichere die Position des e`s
+      Position = i
+    }
+  }
+
+  return Position
+}
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
+
+export function aufgabe14(args) {
+  const input = args
+  const result = []
+
+  let pos = -1
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //suche die Position des dritten e`s in einem Text
+    if (currentElement === "e" || currentElement === "E") {
+      count = count + 1
+      if (count === 3) {
+        pos = i
+      }
+    }
+  }
+  return pos
+}
+linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
+
+export function aufgabe15(args) {
+  const input = args
+
+  let pos = -1
+
+  for (let i = 0; i < input.length; i++) {
+    //wenn du ein leere Zeichen findest
+    if (input[i] === " ") {
+      //speichere die Position
+      pos = i
+      break
+    }
+  }
+  return pos
+}
+linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
+
+export function aufgabe16(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {}
+}
+
+linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
