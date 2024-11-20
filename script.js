@@ -71,15 +71,16 @@ export function aufgabe03(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      // zähle das e
+      // zähle alle e's in einem Text
       count = count + 1
     } else if (currentElement === "E") {
-      //auch E ignorieren
+      // zähle ebenfalls alle E's in einem Text
       count = count + 1
     }
   }
 
   return count
+  // wir geben das Resultat (Zählerwert) zurück, und machen einen Text daraus
 }
 
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
@@ -89,12 +90,16 @@ export function aufgabe05(args) {
   const result = []
 
   let hasUpperCaseLetter = false
+  // leere Zeichenkette
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const UpperCase = currentElement.toUpperCase()
+    //wenn das Zeichen ein Punkt oder ein Leerzeichen ist
     if (currentElement === "." || currentElement === " ") {
+      // verändere nichts
     } else if (currentElement === UpperCase) {
+      //wenn das Zeichen ein Grossbuchstabe ist
       hasUpperCaseLetter = true
     }
   }
@@ -123,6 +128,28 @@ export function aufgabe06(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+
+  let istund = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "u" || currentElement === "U") {
+      const nextElement = input[i + 1]
+      if (nextElement === "n") {
+        const lastElement = input[i + 2]
+        if (lastElement === "d") {
+          istund = true
+        }
+      }
+    }
+  }
+  return istund
+}
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+
 export function aufgabe08(args) {
   //func und tab
   const input = args
@@ -135,9 +162,7 @@ export function aufgabe08(args) {
     if (currentElement === "e") {
       // Das aktuelle Zeichen ist ein e
       // Statt das e anzuhängen, hängen wir eine 3 an
-      result.push(3)
-    } else if (currentElement === "E") {
-      // Wir möchten auch grosse Es erkennen
+
       result.push(3)
     } else {
       // In allen anderen Fällen, möchten wir das aktuelle Zeichen anhängen
@@ -181,6 +206,21 @@ export function aufgabe12(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
+
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "#") {
+      return true
+    }
+  }
+  return false
+}
+
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe13(args) {
   const input = args
@@ -228,7 +268,7 @@ export function aufgabe15(args) {
   let pos = -1
 
   for (let i = 0; i < input.length; i++) {
-    //wenn du ein leere Zeichen findest
+    //wenn du ein leeres Zeichen findest
     if (input[i] === " ") {
       //speichere die Position
       pos = i
@@ -246,3 +286,38 @@ export function aufgabe16(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
+
+export function aufgabe20(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    //Wenn du einen Punkt findest
+    const currentElement = input[i]
+    if (currentElement === ".") {
+      // wenn das Zeichen ein Punkt ist dann gebe ein true zurück
+      if (input[i + 1] === " ") {
+        // ist okay
+      } else {
+        return false
+      }
+    }
+  }
+  return true
+}
+
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+
+export function aufgabe21(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {}
+  const currentElement = input[i]
+  // Wenn du eienen Buchstaben findest
+  if (currentElement >= "a" && currentElement <= "z") {
+    // dann stelle ihn an die letzte Position der Zeichenkette
+    result.push(currentElement)
+  }
+  return result.join("")
+} // gib die Zeichenkette zurück
+
+linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
